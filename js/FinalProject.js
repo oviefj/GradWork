@@ -21,7 +21,7 @@ let waveSpeed = 0.1;
 let zoomSpeed = 0.02;
 let clock = new THREE.Clock();
 let landscape;
-let frameSquare = makeFrameSquare();
+// let frameSquare = makeFrameSquare();
 let upperMesh;  
 let resolution = 300;  
 let frame = [-2.1, -1.5, 3.1, 3.001];
@@ -32,7 +32,7 @@ function createScene() {
     landscape = makeMandelbrotLandscape(limit, resolution, 0.01);
     scene.add(landscape);
 
-    scene.add(frameSquare);
+    // scene.add(frameSquare);
     let light = new THREE.PointLight(0xFFFFFF, 1.0, 1000);
     light.position.set(1, 1, -3);
     let light2 = new THREE.PointLight(0xAAAAAA, 1.0, 1000);
@@ -43,15 +43,15 @@ function createScene() {
     scene.add(ambientLight);
 }
 
-function makeFrameSquare(r=1) {
-    let geom = new THREE.PlaneGeometry(2, 2);
-    let matArgs = {transparent: true, opacity: 0.5, side: THREE.DoubleSide}
-    let mat = new THREE.MeshLambertMaterial(matArgs);
-    let square = new THREE.Mesh(geom, mat);
-    square.scale.set(r, r, 1);
-    square.position.z = 0.01;
-    return square;
-}
+// function makeFrameSquare(r=1) {
+//     let geom = new THREE.PlaneGeometry(2, 2);
+//     let matArgs = {transparent: true, opacity: 0.5, side: THREE.DoubleSide}
+//     let mat = new THREE.MeshLambertMaterial(matArgs);
+//     let square = new THREE.Mesh(geom, mat);
+//     square.scale.set(r, r, 1);
+//     square.position.z = 0.01;
+//     return square;
+// }
 
 // Generates the Mandelbrot fractal landscape (3D version)
 function makeMandelbrotLandscape(limit, res) {
