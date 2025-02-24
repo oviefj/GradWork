@@ -21,6 +21,7 @@ let waveSpeed = 0.1;
 let zoomSpeed = 0.02;
 let clock = new THREE.Clock();
 let landscape;
+let frameSquare = makeFrameSquare();
 let upperMesh;  
 let resolution = 300;  
 let frame = [-2.1, -1.5, 3.1, 3.001];
@@ -31,7 +32,7 @@ function createScene() {
     landscape = makeMandelbrotLandscape(limit, resolution, 0.01);
     scene.add(landscape);
 
-    frameSquare = makeFrameSquare();
+    scene.add(frameSquare);
     let light = new THREE.PointLight(0xFFFFFF, 1.0, 1000);
     light.position.set(1, 1, -3);
     let light2 = new THREE.PointLight(0xAAAAAA, 1.0, 1000);
